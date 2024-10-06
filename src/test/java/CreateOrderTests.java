@@ -47,7 +47,7 @@ public class CreateOrderTests {
 
     @Test
     @DisplayName("Создание заказа без ингредиентов")
-     public void СreateOrderWithoutIngridients() {
+     public void CreateOrderWithoutIngridients() {
         response = order.createOrder(OrderData.getOrderWithoutIngredients(), "token");
         response.then().assertThat().body("message", equalTo("Ingredient ids must be provided"))
                 .and().statusCode(400);
